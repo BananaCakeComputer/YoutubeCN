@@ -9,7 +9,7 @@ function addCN(){
                 ele.childNodes[3].childNodes[1].childNodes[2].childNodes[3].innerHTML = ''
             }
             ele.onclick = function(){
-                chrome.storage.local.set({ region: "otr" })
+                chrome.storage.local.set({region: "otr"})
             }
         })
     }
@@ -156,7 +156,7 @@ avatorCatch()
 chrome.storage.local.get(["region"]).then((result) => {
     locat = result.region;
     if(locat==undefined){
-        chrome.storage.local.set({ region: "otr" })
+        chrome.storage.local.set({region: "otr"})
     }else if(locat=='CN'){
         changeLabel()
         changeContents()
