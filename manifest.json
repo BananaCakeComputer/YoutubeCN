@@ -1,0 +1,22 @@
+{
+   "author": "蕉饼",
+   "description": "“认真便输了”",
+   "homepage_url": "https://bananacakecn.top",
+   "icons": {
+      "128": "icon.png",
+      "32": "icon.png"
+   },
+   "manifest_version": 3,
+   "name": "Youtube中国",
+   "host_permissions": ["https://www.youtube.com/"],
+   "content_scripts": [
+      {
+         "js": ["style.js"],
+         "matches": ["https://www.youtube.com/*"],
+         "run_at": "document_end"
+      }
+   ],
+   "permissions": ["storage"],
+   "short_name": "油管中国",
+   "version": "1.0"
+}
