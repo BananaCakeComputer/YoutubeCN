@@ -152,6 +152,21 @@ function searchRemove(){
         window.setTimeout(searchRemove, 100)
     }
 }
+var attempt = 0
+function guideRemove(){
+    try{
+        document.getElementById('guide-renderer').childNodes[2].childNodes[0].childNodes[4].childNodes[1].remove()
+        document.getElementById('guide-renderer').childNodes[2].childNodes[1].childNodes[4].childNodes[3].remove()
+        document.getElementById('guide-renderer').childNodes[2].childNodes[2].remove()
+        document.getElementById('footer').childNodes[6].childNodes[0].innerHTML += '<br>ICP证合字B2-20070004号'
+    }catch{
+        if(attempt>50){
+            return
+        }
+        window.setTimeout(guideRemove, 100)
+        attempt += 1
+    }
+}
 avatorCatch()
 chrome.storage.local.get(["region"]).then((result) => {
     locat = result.region;
@@ -161,5 +176,6 @@ chrome.storage.local.get(["region"]).then((result) => {
         changeLabel()
         changeContents()
         searchRemove()
+        guideRemove()
     }
 });
