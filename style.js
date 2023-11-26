@@ -146,6 +146,9 @@ function searchRemove(){
             </svg>
         </div>`
         document.getElementById('search-icon-legacy').onclick = function(){
+            if(document.getElementById('search-input').childNodes[0].value==''){
+                return;
+            }
             location.href = 'https://www.google.cn/search?q=' + document.getElementById('search-input').childNodes[0].value
         }
     }catch{
