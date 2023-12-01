@@ -1,12 +1,9 @@
 var locat
-function avatorOnClick(){
-    console.log(1)
-}
 function addCN(){
     if(locat=='CN'){
         document.getElementById('contentWrapper').childNodes[1].childNodes[8].childNodes[0].childNodes[6].childNodes[1].childNodes[0].childNodes[4].childNodes.forEach(function(ele){
-            if(ele.childNodes[3].childNodes[1].childNodes[2].childNodes[3].childNodes.length!=0){
-                ele.childNodes[3].childNodes[1].childNodes[2].childNodes[3].innerHTML = ''
+            if(ele.childNodes[2].childNodes[1].childNodes[2].childNodes[3].childNodes.length!=0){
+                ele.childNodes[2].childNodes[1].childNodes[2].childNodes[3].innerHTML = ''
             }
             ele.onclick = function(){
                 chrome.storage.local.set({region: "otr"})
@@ -18,12 +15,12 @@ function addCN(){
     cnBTN.setAttribute('compact-link-style', 'compact-link-style-type-selection-menu')
     document.getElementById('contentWrapper').childNodes[1].childNodes[8].childNodes[0].childNodes[6].childNodes[1].childNodes[0].childNodes[4].appendChild(cnBTN)
     if(locat=='CN'){
-        cnBTN.childNodes[3].childNodes[1].childNodes[2].innerHTML = `
+        cnBTN.childNodes[2].childNodes[1].childNodes[2].innerHTML = `
         <yt-img-shadow height="40" width="40" class="style-scope ytd-compact-link-renderer" disable-upgrade="" hidden=""></yt-img-shadow>
         <yt-icon class="style-scope ytd-compact-link-renderer">
             <yt-icon-shape class="style-scope yt-icon"></yt-icon-shape>
         </yt-icon>`
-        cnBTN.childNodes[3].childNodes[1].childNodes[2].childNodes[3].innerHTML = `
+        cnBTN.childNodes[2].childNodes[1].childNodes[2].childNodes[3].innerHTML = `
         <icon-shape class="yt-spec-icon-shape">
             <div style="width: 100%; height: 100%; fill: currentcolor;">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;">
@@ -32,7 +29,7 @@ function addCN(){
             </div>
         </icon-shape>`
     }
-    cnBTN.childNodes[3].childNodes[1].childNodes[4].childNodes[1].innerText = '中国'
+    cnBTN.childNodes[2].childNodes[1].childNodes[4].childNodes[1].innerText = '中国'
     cnBTN.onclick = function(){
         chrome.storage.local.set({ region: "CN" }).then(() => {
             location.reload()
@@ -41,7 +38,7 @@ function addCN(){
 }
 function avatarOnClick(){
     try{
-        document.getElementById('contentWrapper').childNodes[1].childNodes[6].childNodes[1].childNodes[2].childNodes[4].childNodes[4].childNodes[3].addEventListener('click', addCN)
+        document.getElementById('contentWrapper').childNodes[1].childNodes[6].childNodes[1].childNodes[2].childNodes[4].childNodes[4].childNodes[2].addEventListener('click', addCN)
     }catch{
         window.setTimeout(avatarOnClick, 100)
     }
@@ -50,7 +47,7 @@ sucTime = 0;
 function avatarOnClickEveryTime(){
     if(locat=='CN'){
         try{
-            if(document.getElementById('contentWrapper').childNodes[1].childNodes[6].childNodes[1].childNodes[2].childNodes[4].childNodes[4].childNodes[3].childNodes[1].childNodes[4].childNodes[3].innerText == '中国'){
+            if(document.getElementById('contentWrapper').childNodes[1].childNodes[6].childNodes[1].childNodes[2].childNodes[4].childNodes[4].childNodes[2].childNodes[1].childNodes[4].childNodes[3].innerText == '中国'){
                 sucTime++
                 if(sucTime>=5){
                     sucTime = 0
@@ -59,7 +56,7 @@ function avatarOnClickEveryTime(){
                 }
                 return
             }
-            document.getElementById('contentWrapper').childNodes[1].childNodes[6].childNodes[1].childNodes[2].childNodes[4].childNodes[4].childNodes[3].childNodes[1].childNodes[4].childNodes[3].innerText = '中国'
+            document.getElementById('contentWrapper').childNodes[1].childNodes[6].childNodes[1].childNodes[2].childNodes[4].childNodes[4].childNodes[2].childNodes[1].childNodes[4].childNodes[3].innerText = '中国'
             window.setTimeout(avatarOnClickEveryTime, 100)
         }catch{
             window.setTimeout(avatarOnClickEveryTime, 100)
@@ -111,10 +108,10 @@ function avatorCatch(){
 }
 var block = document.createElement('div')
 function changeProperties(){
-    block.childNodes[1].childNodes[5].childNodes[2].setAttribute('src', 'https://www.youtube.com/img/desktop/unavailable/unavailable_video.png')
-    block.childNodes[1].childNodes[5].childNodes[2].style.cssText = 'visibility: visible ! important;'
-    block.childNodes[1].childNodes[7].childNodes[1].innerHTML = '推送不可用'
-    block.childNodes[1].childNodes[3].remove()
+    block.childNodes[1].childNodes[4].childNodes[2].setAttribute('src', 'https://www.youtube.com/img/desktop/unavailable/unavailable_video.png')
+    block.childNodes[1].childNodes[4].childNodes[2].style.cssText = 'visible: ;'
+    block.childNodes[1].childNodes[6].childNodes[1].innerHTML = '推送不可用'
+    block.childNodes[1].childNodes[2].remove()
 }
 function changeContents(){
     if(location.href!='https://www.youtube.com/'){
