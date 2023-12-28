@@ -118,8 +118,8 @@ function changeContents(){
         return
     }
     try{
-        document.getElementById('page-manager').childNodes[2].childNodes[18].childNodes[2].childNodes[0].childNodes[12].remove()
-        document.getElementById('page-manager').childNodes[2].childNodes[18].childNodes[2].childNodes[0].appendChild(block)
+        document.getElementById('page-manager').childNodes[2].childNodes[20].childNodes[2].childNodes[0].childNodes[12].remove()
+        document.getElementById('page-manager').childNodes[2].childNodes[20].childNodes[2].childNodes[0].appendChild(block)
         block.innerHTML = `
         <ytd-background-promo-renderer class="style-scope ytd-item-section-renderer" icon-name="yt-icons:" renderer-style="full-height" thumbnail="">
             <yt-img-shadow class="image style-scope ytd-background-promo-renderer no-transition" style="background-color: transparent;" loaded=""></yt-img-shadow>
@@ -155,10 +155,10 @@ function searchRemove(){
 var attempt = 0
 function guideRemove(){
     try{
+        document.getElementById('footer').childNodes[6].childNodes[0].innerHTML += '© 2023 Google LLC<br>ICP证合字B2-20070004号'
+        document.getElementById('guide-renderer').childNodes[2].childNodes[2].remove()
         document.getElementById('guide-renderer').childNodes[2].childNodes[0].childNodes[4].childNodes[1].remove()
         document.getElementById('guide-renderer').childNodes[2].childNodes[1].childNodes[4].childNodes[3].remove()
-        document.getElementById('guide-renderer').childNodes[2].childNodes[2].remove()
-        document.getElementById('footer').childNodes[6].childNodes[0].innerHTML += '<br>ICP证合字B2-20070004号'
     }catch{
         if(attempt>50){
             return
