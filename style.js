@@ -155,7 +155,7 @@ function searchRemove(){
 var attempt = 0
 function guideRemove(){
     try{
-        document.getElementById('footer').childNodes[6].childNodes[0].innerHTML += '© 2023 Google LLC<br>ICP证合字B2-20070004号'
+        document.getElementById('footer').childNodes[6].childNodes[0].innerHTML = '© 2023 Google LLC<br>ICP证合字B2-20070004号'
         document.getElementById('guide-renderer').childNodes[2].childNodes[2].remove()
         document.getElementById('guide-renderer').childNodes[2].childNodes[0].childNodes[4].childNodes[1].remove()
         document.getElementById('guide-renderer').childNodes[2].childNodes[1].childNodes[4].childNodes[3].remove()
